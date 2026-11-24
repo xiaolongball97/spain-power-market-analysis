@@ -1,0 +1,21 @@
+,mae_increase_eur
+residual_load_fc,4.518
+da_mean_d1,0.381
+hydro_reservoir_am_d1,0.318
+nuclear_am_d1,0.198
+da_max_d1,0.168
+gas_am_d1,0.111
+da_min_d1,0.108
+temp_am_d1,0.101
+da_lag24,0.018
+weekday,0.016
+da_lag168,0.008
+is_weekend,0.0
+month_sin,0.0
+month_cos,0.0
+hour_cos,-0.011
+hour,-0.024
+forecast wind onshore day ahead,-0.058
+forecast solar day ahead,-0.064
+hour_sin,-0.088
+total load forecast,-0.131

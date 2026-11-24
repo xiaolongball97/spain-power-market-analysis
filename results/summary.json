@@ -1,0 +1,193 @@
+{
+  "data_quality": {
+    "energy_rows": 35064,
+    "local_offsets": {
+      "+02:00": 20664,
+      "+01:00": 14400
+    },
+    "energy_missing_hours_utc": 0,
+    "energy_duplicate_hours_utc": 0,
+    "empty_columns": [
+      "generation fossil coal-derived gas",
+      "generation fossil oil shale",
+      "generation fossil peat",
+      "generation geothermal",
+      "generation hydro pumped storage aggregated",
+      "generation marine",
+      "generation wind offshore",
+      "forecast wind offshore eday ahead"
+    ],
+    "suspect_zero_values": {
+      "generation nuclear": 3,
+      "generation fossil gas": 1,
+      "generation wind onshore": 3,
+      "generation hydro water reservoir": 3
+    },
+    "energy_missing_values_before": {
+      "generation biomass": 19,
+      "generation fossil brown coal/lignite": 18,
+      "generation fossil gas": 19,
+      "generation fossil hard coal": 18,
+      "generation fossil oil": 19,
+      "generation hydro pumped storage consumption": 19,
+      "generation hydro run-of-river and poundage": 19,
+      "generation hydro water reservoir": 21,
+      "generation nuclear": 20,
+      "generation other": 18,
+      "generation other renewable": 18,
+      "generation solar": 18,
+      "generation waste": 19,
+      "generation wind onshore": 21,
+      "total load actual": 36
+    },
+    "energy_hours_with_gaps_before": 48,
+    "energy_hours_filled": 37,
+    "energy_hours_still_missing": 11,
+    "weather_rows": 178396,
+    "weather_duplicate_city_hours": 3076,
+    "weather_duplicates_by_city": {
+      "Madrid": 1203,
+      "Bilbao": 887,
+      "Seville": 493,
+      "Barcelona": 412,
+      "Valencia": 81
+    },
+    "weather_outliers_removed": {
+      "pressure": {
+        "count": 48,
+        "cities": {
+          "Barcelona": 48
+        },
+        "min": 0.0,
+        "max": 1008371.0
+      },
+      "wind_speed": {
+        "count": 3,
+        "cities": {
+          "Valencia": 3
+        },
+        "min": 54.0,
+        "max": 133.0
+      }
+    },
+    "weather_rows_per_city_after_dedup": {
+      "Valencia": 35064,
+      "Madrid": 35064,
+      "Bilbao": 35064,
+      "Barcelona": 35064,
+      "Seville": 35064
+    },
+    "hours_after_join": 35064,
+    "hours_without_weather": 0
+  },
+  "price_shape": {
+    "avg_price_by_year": {
+      "2015": 50.3,
+      "2016": 39.7,
+      "2017": 52.2,
+      "2018": 57.3
+    },
+    "cheapest_hour": 4,
+    "cheapest_hour_price": 40.2,
+    "dearest_hour": 21,
+    "dearest_hour_price": 56.7,
+    "cheapest_month": 3,
+    "dearest_month": 11
+  },
+  "renewables_vs_price": {
+    "correlation_vre_share_price": -0.56,
+    "price_lowest_vre_decile": 59.0,
+    "price_highest_vre_decile": 31.1,
+    "vre_share_lowest_decile": 0.074,
+    "vre_share_highest_decile": 0.476,
+    "eur_per_mwh_per_10pp_vre_controlled": -6.32,
+    "eur_per_mwh_per_gw_load_controlled": 1.13,
+    "regression_r2": 0.708
+  },
+  "capture_prices": {
+    "capture_by_year": {
+      "2015": {
+        "baseload": 50.325,
+        "solar_capture": 53.11,
+        "solar_capture_rate": 1.055,
+        "wind_capture": 46.25,
+        "wind_capture_rate": 0.919
+      },
+      "2016": {
+        "baseload": 39.667,
+        "solar_capture": 39.332,
+        "solar_capture_rate": 0.992,
+        "wind_capture": 34.669,
+        "wind_capture_rate": 0.874
+      },
+      "2017": {
+        "baseload": 52.239,
+        "solar_capture": 51.808,
+        "solar_capture_rate": 0.992,
+        "wind_capture": 50.742,
+        "wind_capture_rate": 0.971
+      },
+      "2018": {
+        "baseload": 57.294,
+        "solar_capture": 59.342,
+        "solar_capture_rate": 1.036,
+        "wind_capture": 53.091,
+        "wind_capture_rate": 0.927
+      }
+    }
+  },
+  "battery": {
+    "assumptions": {
+      "power_mw": 1.0,
+      "energy_mwh": 2.0,
+      "round_trip_efficiency": 0.88,
+      "cycles_per_day": 1
+    },
+    "revenue_per_mw_by_year": {
+      "2015": 11888.0,
+      "2016": 8972.0,
+      "2017": 8255.0,
+      "2018": 7255.0
+    },
+    "avg_daily_spread_eur": 20.5,
+    "best_month_avg": 1,
+    "worst_month_avg": 6,
+    "share_days_not_worth_cycling": 0.055
+  },
+  "tso_forecast_accuracy": {
+    "load_wape": 0.011,
+    "solar_wape": 0.0848,
+    "wind_wape": 0.0333,
+    "wind_forecast_correlation": 0.9947
+  },
+  "price_gap": {
+    "avg_gap_by_year": {
+      "2015": 11.04,
+      "2016": 7.77,
+      "2017": 7.09,
+      "2018": 6.15
+    },
+    "share_hours_final_above_day_ahead": 0.888,
+    "avg_gap_all": 8.01
+  },
+  "day_ahead_forecast": {
+    "chosen_setup": "gradient_boosting | relative_to_yesterday",
+    "validation_period": "2017 (walk-forward, monthly retrain)",
+    "test_period": "2018 (walk-forward, monthly retrain)",
+    "test_rows": 8760,
+    "test_mae": 5.376,
+    "test_rmse": 6.854,
+    "naive_d1_mae": 7.023,
+    "improvement_vs_naive_d1": 0.235,
+    "trained_once_mae": 6.795,
+    "trained_once_bias": 4.607,
+    "without_wind_solar_fc_mae": 6.623,
+    "top_drivers": {
+      "residual_load_fc": 4.518,
+      "da_mean_d1": 0.381,
+      "hydro_reservoir_am_d1": 0.318,
+      "nuclear_am_d1": 0.198,
+      "da_max_d1": 0.168
+    }
+  }
+}

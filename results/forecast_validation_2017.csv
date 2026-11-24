@@ -1,0 +1,7 @@
+model,mae,rmse,bias
+ridge | level,5.232,7.163,1.506
+ridge | relative_to_yesterday,5.232,7.163,1.506
+gradient_boosting | level,5.505,8.251,2.117
+gradient_boosting | relative_to_yesterday,4.989,7.046,1.782
+naive_same_hour_yesterday,7.297,10.844,-0.117
+naive_same_hour_last_week,10.51,14.207,-0.345
