@@ -73,19 +73,6 @@ Market questions use the **day-ahead price** (the wholesale auction price). The 
 - Simple battery model: no degradation, grid-service income or intraday trading.
 - The wind forecast field may not be a true day-ahead forecast, and the price model relies on it.
 
-## Repo structure
-
-```
-├── src/
-│   ├── clean.py        # loading, validation, cleaning, data-quality report
-│   ├── analysis.py     # Q1–Q4
-│   ├── forecast.py     # Q5 day-ahead forecast
-│   ├── charts.py       # chart styling
-│   └── run_all.py      # runs everything
-├── notebooks/spain_power_analysis.ipynb   # walkthrough with results
-├── results/            # tables (CSV) and summary.json
-├── charts/             # PNG charts
-└── data/               # raw and processed data (not committed)
 ```
 
 ## How to run
@@ -102,6 +89,3 @@ This rebuilds `results/`, `charts/` and `data/processed/` (clean hourly and dail
 
 Python (pandas, NumPy, scikit-learn, Matplotlib), Jupyter, Git and GitHub.
 
-## Related work
-
-[mahaqam/europe-power-forecasting-trading-research](https://gh.ali360.cloudns.ch/mahaqam/europe-power-forecasting-trading-research) uses the same dataset for a price forecast that includes the previous hour's actual price. This project instead forecasts the day-ahead price with only day-before information, and adds the market, capture-price and battery analysis.
